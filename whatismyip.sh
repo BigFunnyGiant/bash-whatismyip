@@ -23,4 +23,8 @@ _wimip_svc=`echo "$_wimip_svcs" | sed -n "$_wimip_rand"p | sed -e 's#[\t ]\+##g'
 # hit the service to get ip
 _wimip_myip=`curl -s $_wimip_svc` || echo "Failed: $_wimip_svc"
 # echo ip out.
-echo -ne "$_wimip_myip\n"
+if [[ `echo "$_wimip_myip" | grep "[\<\>\/]"` != "" ]]; then
+   echo "Failed: $_wimip_svc"
+else
+   echo -ne "$_wimip_myip\n"
+fi
