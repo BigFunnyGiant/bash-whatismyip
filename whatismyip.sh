@@ -21,6 +21,6 @@ _wimip_rand=$[ $RANDOM % `echo "$_wimip_svcs" | wc -l` ]
 # grab that line and cleanup spaces & tabs
 _wimip_svc=`echo "$_wimip_svcs" | sed -n "$_wimip_rand"p | sed -e 's#[\t ]\+##g'`
 # hit the service to get ip
-_wimip_myip=`curl -s $_wimip_svc`
+_wimip_myip=`curl -s $_wimip_svc` || echo "Failed: $_wimip_svc"
 # echo ip out.
 echo -ne "$_wimip_myip\n"
