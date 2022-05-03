@@ -1,18 +1,18 @@
 #!/bin/bash
 
 _wimip_svcs="http://whatismyip.akamai.com
-	     http://ip.tyk.nu
-	     http://l2.io/ip
-	     http://ipinfo.io/ip
+             http://ip.tyk.nu
+             http://l2.io/ip
+             http://ipinfo.io/ip
              https://api.ipify.org
-	     https://wtfismyip.com/text
-	     http://ipecho.net/plain
-	     http://ident.me
-	     http://icanhazip.com
-	     http://ifconfig.co
+             https://wtfismyip.com/text
+             http://ipecho.net/plain
+             http://ident.me
+             http://icanhazip.com
+             http://ifconfig.co
              http://ifconfig.me
-	     http://wgetip.com
-	     http://ipecho.net/plain"
+             http://wgetip.com
+             http://ipecho.net/plain"
 
 # get a random line out of # of lines in _wimip_svcs
 _wimip_rand=$[ $RANDOM % `echo "$_wimip_svcs" | wc -l` ]
