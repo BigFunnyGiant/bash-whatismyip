@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 _wimip_svcs="http://whatismyip.akamai.com
              http://ip.tyk.nu
