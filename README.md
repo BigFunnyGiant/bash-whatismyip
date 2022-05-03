@@ -7,5 +7,6 @@ whatismyip.sh
 
 # Dependencies
 - Bash
-- Curl
+- Curl\
+\
 [![basher install](https://www.basher.it/assets/logo/basher_install.svg)](https://www.basher.it/package/)
