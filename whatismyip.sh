@@ -12,7 +12,6 @@ _wimip_svcs="http://whatismyip.akamai.com
 	     http://icanhazip.com
 	     http://ifconfig.co
 	     http://wgetip.com
-	     http://bot.whatismyipaddress.com
 	     https://4.ifcfg.me
 	     http://ipecho.net/plain"
 
