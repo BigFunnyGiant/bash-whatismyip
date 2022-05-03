@@ -8,7 +8,6 @@ _wimip_svcs="http://whatismyip.akamai.com
 	     https://wtfismyip.com/text
 	     http://ipecho.net/plain
 	     http://ident.me
-	     http://ipof.in/txt
 	     http://icanhazip.com
 	     http://ifconfig.co
              http://ifconfig.me
