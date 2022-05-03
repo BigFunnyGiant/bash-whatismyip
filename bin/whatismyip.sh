@@ -16,6 +16,9 @@ _wimip_svcs="http://whatismyip.akamai.com
 
 # get a random line out of # of lines in _wimip_svcs
 _wimip_rand=$[ $RANDOM % `echo "$_wimip_svcs" | wc -l` ]
+if (( _wimip_rand == 0 )); then
+    _wimip_rand=$[ $RANDOM % `echo "$_wimip_svcs" | wc -l` ]
+  fi
 # grab that line and cleanup spaces & tabs
 _wimip_svc=`echo "$_wimip_svcs" | sed -n "$_wimip_rand"p | sed -e 's#[\t ]\+##g'`
 # hit the service to get ip
