@@ -5,7 +5,6 @@ _wimip_svcs="http://whatismyip.akamai.com
 	     http://l2.io/ip
 	     https://api.ipify.org
 	     https://wtfismyip.com/text
-	     http://ip.appspot.com
 	     http://ipecho.net/plain
 	     http://ident.me
 	     http://ipof.in/txt
