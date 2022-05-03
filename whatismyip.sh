@@ -3,13 +3,15 @@
 _wimip_svcs="http://whatismyip.akamai.com
 	     http://ip.tyk.nu
 	     http://l2.io/ip
-	     https://api.ipify.org
+	     http://ipinfo.io/ip
+             https://api.ipify.org
 	     https://wtfismyip.com/text
 	     http://ipecho.net/plain
 	     http://ident.me
 	     http://ipof.in/txt
 	     http://icanhazip.com
 	     http://ifconfig.co
+             http://ifconfig.me
 	     http://wgetip.com
 	     http://ipecho.net/plain"
 
