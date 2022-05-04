@@ -15,9 +15,9 @@ or copy it to somewhere you like, maybe in the PATH so you can execute it from a
 Or\
 \
 use Basher\
-'''bash
+```bash
 basher install BigFunnyGiant/bash-whatismyip
-'''
+```
 
 # Usage
 whatismyip.sh
