@@ -7,5 +7,6 @@ It depends on a bunch of services, picks one randomly and executes curl to deter
 whatismyip.sh
 
 # Dependencies
-- Bash
-- Curl
+- bash
+- sed
+- curl
