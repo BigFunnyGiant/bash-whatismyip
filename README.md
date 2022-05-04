@@ -10,10 +10,10 @@ git clone https://github.com/BigFunnyGiant/bash-whatismyip # clone the repositor
 cd bash-whatismyip
 cp whatismyip.sh /usr/local/bin
 ```
-or copy it to somewhere you like, maybe in the PATH so you can execute it from anywhere\\
-
-Or\\
-
+or copy it to somewhere you like, maybe in the PATH so you can execute it from anywhere\
+\
+Or\
+\
 use Basher\
 '''bash
 basher install BigFunnyGiant/bash-whatismyip
