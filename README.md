@@ -19,10 +19,10 @@ use Basher
 basher install BigFunnyGiant/bash-whatismyip
 ```
 
-# Usage
+## Usage
 whatismyip.sh
 
-# Dependencies
+## Dependencies
 - bash
 - sed
 - curl
