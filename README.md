@@ -20,11 +20,11 @@ basher install BigFunnyGiant/bash-whatismyip
 ```
 
 ## Usage
-./whatismyip.sh 4 for IPV4
-./whatismyip.sh 6 for IPV6
-or
-./whatismyip.sh 
-it will ask you which
+./whatismyip.sh 4 for IPV4\
+./whatismyip.sh 6 for IPV6\
+or\
+./whatismyip.sh\ 
+it will ask you which\
 
 ## Dependencies
 - bash
