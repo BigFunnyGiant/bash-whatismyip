@@ -1,31 +1,48 @@
 #!/usr/bin/env bash
 
-_wimip_svcs="http://whatismyip.akamai.com
-             http://ip.tyk.nu
-             http://l2.io/ip
-             http://ipinfo.io/ip
-             https://api.ipify.org
-             https://wtfismyip.com/text
-             http://ipecho.net/plain
-             http://ident.me
-             http://icanhazip.com
-             http://ifconfig.co
-             http://ifconfig.me
-             http://wgetip.com
-             http://ipecho.net/plain"
-
-# get a random line out of # of lines in _wimip_svcs
-_wimip_rand=$[ $RANDOM % `echo "$_wimip_svcs" | wc -l` ]
-if (( _wimip_rand == 0 )); then
-    _wimip_rand=$[ $RANDOM % `echo "$_wimip_svcs" | wc -l` ]
-  fi
-# grab that line and cleanup spaces & tabs
-_wimip_svc=`echo "$_wimip_svcs" | sed -n "$_wimip_rand"p | sed -e 's#[\t ]\+##g'`
-# hit the service to get ip
-_wimip_myip=`curl -s $_wimip_svc` || echo "Failed: $_wimip_svc"
-# echo ip out.
-if [[ `echo "$_wimip_myip" | grep "[\<\>\/]"` != "" ]]; then
-   echo "Failed: $_wimip_svc"
+# Get IP version option from command line arguments or user input
+if [ "$#" -gt 0 ]; then
+    ip_version=$1
 else
-   echo -ne "$_wimip_myip\n"
+    read -p "Enter IP version to use (4/6/B for both): " ip_version
 fi
+
+# Check if IP version is valid
+if [ "$ip_version" != "4" ] && [ "$ip_version" != "6" ] && [ "$ip_version" != "B" ] && [ "$ip_version" != "b" ]; then
+    echo "Invalid option. Please enter 4, 6, or B for both."
+    exit 1
+fi
+
+# URLs for getting IP addresses
+ipv4_urls="http://ipv4.whatismyip.akamai.com
+           http://ipv4.tyk.nu
+           http://ipv4.icanhazip.com
+           http://ipv4.ifconfig.me"
+
+ipv6_urls="http://ipv6.whatismyip.akamai.com
+           http://ipv6.tyk.nu
+           http://ipv6.icanhazip.com
+           http://ipv6.ifconfig.me"
+
+# Get a random URL from the list for the specified IP version
+if [ "$ip_version" = "4" ]; then
+    urls=$ipv4_urls
+elif [ "$ip_version" = "6" ]; then
+    urls=$ipv6_urls
+else
+    urls="$ipv4_urls"$'\n'"$ipv6_urls"
+fi
+
+url=$(echo "$urls" | shuf -n 1)
+
+# Get IP address from the selected URL
+ip=$(curl -s "$url")
+
+# Check if the IP address was retrieved successfully
+if [ -z "$ip" ]; then
+    echo "Failed to retrieve IP address from $url"
+    exit 1
+fi
+
+# Print the IP address
+echo "$ip"
