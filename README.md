@@ -7,7 +7,7 @@ It depends on a bunch of services, picks one randomly and executes curl to deter
 
 ```bash
 git clone https://github.com/BigFunnyGiant/bash-whatismyip # clone the repository
-cd bash-whatismyip
+cd bash-whatismyip/bin
 cp whatismyip.sh /usr/local/bin
 ```
 or copy it to somewhere you like, maybe in the PATH so you can execute it from anywhere\
